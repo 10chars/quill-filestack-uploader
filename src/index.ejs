@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <style>
+    #editor {
+      position: relative;
+    }
+  </style>
+
+  <!-- Theme included stylesheets -->
+  <link rel="stylesheet" href="https://unpkg.com/rex-css-framework@0.1.3-beta/dist/css/rex.css">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.3.4/quill.bubble.css" rel="stylesheet">
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="//static.filestackapi.com/filestack-js/1.0.2/filestack.min.js"></script>
+
+</head>
+
+<body>
+  <h2>Demo</h2>
+  <div id="editor">
+    <p>Select the image button from the toolbar and the filestack modal should appear</p>
+    <p><br></p>
+    <p></p>
+    <p><br></p>
+    <p><br></p>
+    <p></p>
+  </div>
+
+  <!-- Initialize Quill editor -->
+  <script>
+    const toolbarOptions = [
+      [{ 'header': [1, 2, 3, false] }],
+      ['bold', 'italic'],
+      ['clean'],
+      ['image']
+    ];
+
+    const quill = new Quill('#editor', {
+      theme: 'snow',
+      modules: {
+        toolbar: {
+          container: toolbarOptions
+        },
+        filestackUploader: {
+          filestack: window['filestack'],
+          filestackApiKey: '<%= htmlWebpackPlugin.options.filestackApiKey %>'
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>
