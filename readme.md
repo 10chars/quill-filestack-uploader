@@ -2,15 +2,13 @@
 
 v1.0.0-alpha
 
-```
+```js
 const quill = new Quill('#editor', {
   modules: {
-    toolbar: {
-      container: toolbarOptions
-    },
     filestackUploader: {
       filestack: window['filestack'],
-      filestackApiKey: '__FILESTACK_API_KEY__'
+      filestackApiKey: '__FILESTACK_API_KEY__',
+      fromSources: ['local_file_system', 'googledrive', 'url', 'imagesearch', ...]
     }
   }
 });
