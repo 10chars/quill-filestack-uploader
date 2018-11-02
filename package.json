@@ -7,7 +7,6 @@
     "test": "test",
     "build": "del lib && webpack --config webpack.prod.js --mode production",
     "build:public": "del public && webpack --config webpack.dev.js --mode production --output-path public",
-    "deploy:public": "npm run build:public && surge ./public",
     "start": "webpack-dev-server --config webpack.dev.js --content-base public --hot --inline --mode development",
     "format": "prettier --single-quote --print-width 120 --trailing-comma es5 --write 'src/**/*.ts{,x}'"
   },
@@ -30,7 +29,6 @@
     "pre-commit": "^1.2.2",
     "prettier": "1.10.2",
     "style-loader": "^0.21.0",
-    "surge": "^0.20.1",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.0.3",
