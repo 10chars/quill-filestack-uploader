@@ -100,3 +100,5 @@ export class FilestackUploader {
     this.picker.close();
   };
 }
+
+Quill.register('modules/filestackUploader', FilestackUploader);
