@@ -6,7 +6,7 @@ type Options = {
   fromSources?: Array<string>;
 };
 
-export class FilestackUploader {
+class FilestackUploader {
   quill: Quill;
   options: Options;
   range: any;
